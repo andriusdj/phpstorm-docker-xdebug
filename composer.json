@@ -1,9 +1,13 @@
 {
-  "name": "supermetrics/vilnius-demo",
-  "description": "Vilnius demo project",
+  "name": "andriusdj/supermetrics-test",
+  "description": "Supermetrics test assignment based on environment shown during VilniusPHP",
   "type": "project",
   "license": "MIT",
   "authors": [
+    {
+      "name": "Andrius Jankevicius",
+      "email": "aj@fostral.net"
+    },
     {
       "name": "Metod Novakovic",
       "email": "metod.novakovic@supermetrics.com"
@@ -15,14 +19,19 @@
   ],
   "autoload": {
     "psr-4": {
-      "Supermetrics\\Connector\\": "src/"
+      "AndriusJankevicius\\Supermetrics\\": "src/"
     }
   },
   "require": {
-    "ext-json": "*"
+    "ext-json": "*",
+    "ext-pdo": "*",
+    "ext-curl": "*",
+    "guzzlehttp/guzzle": "^6.3",
+    "php-di/php-di": "^6.0"
   },
   "require-dev": {
     "php": "^7.2",
-    "phpunit/phpunit": "^7.4"
+    "phpunit/phpunit": "^7.4",
+    "phpstan/phpstan": "^0.11.1"
   }
 }
