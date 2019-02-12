@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace AndriusJankevicius\Supermetrics;
 
+use AndriusJankevicius\Supermetrics\Service\PostStatsContainer;
 use AndriusJankevicius\Supermetrics\Service\TokenManager;
 
 /**
@@ -12,13 +13,18 @@ use AndriusJankevicius\Supermetrics\Service\TokenManager;
 class AssignmentController
 {
     /**
-     * @var TokenManager
+     * @var PostStatsContainer
      */
-    private $tokenManager;
+    private $postStatsContainer;
 
-    public function __construct(TokenManager $tokenManager)
+    /**
+     * AssignmentController constructor.
+     *
+     * @param PostStatsContainer $postStatsContainer
+     */
+    public function __construct(PostStatsContainer $postStatsContainer)
     {
-        $this->tokenManager = $tokenManager;
+        $this->postStatsContainer = $postStatsContainer;
     }
 
     /**
@@ -26,12 +32,13 @@ class AssignmentController
      */
     public function getResult(): array
     {
+        $stats = [];
         try {
-            $token = $this->tokenManager->getToken();
+            foreach ($this->postStatsContainer->getAll() as $postStats) {
+                $stats[$postStats->getName()] = $postStats->get();
+            }
 
-            return [
-                'token' => $token
-            ];
+            return $stats;
         } catch (\Throwable $e) {
 
             return [

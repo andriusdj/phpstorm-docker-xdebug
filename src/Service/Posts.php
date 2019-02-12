@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace AndriusJankevicius\Supermetrics\Service;
 
 use AndriusJankevicius\Supermetrics\Api\Posts as PostsApi;
+use AndriusJankevicius\Supermetrics\Entity\Post;
 use AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException;
 
 /**
@@ -31,7 +32,7 @@ class Posts
 
     /**
      * @param int $page
-     * @return array
+     * @return Post[]
      * @throws InvalidApiResponseException
      */
     public function getPosts(int $page): array
