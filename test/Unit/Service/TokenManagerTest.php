@@ -20,7 +20,7 @@ class TokenManagerTest extends TestCase
     /** @var TokenManager */
     private $tokenManager;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->tokenStorage = $this->createMock(TokenStorage::class);
         $this->registration = $this->createMock(Registration::class);
@@ -30,6 +30,7 @@ class TokenManagerTest extends TestCase
 
     /**
      * @test
+     * @throws \AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException
      */
     public function shouldFetchAndSaveNewTokenFromAPI(): void
     {
@@ -52,6 +53,7 @@ class TokenManagerTest extends TestCase
 
     /**
      * @test
+     * @throws \AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException
      */
     public function shouldGetTokenFromDB(): void
     {

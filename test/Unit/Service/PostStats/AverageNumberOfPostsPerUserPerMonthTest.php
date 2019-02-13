@@ -15,13 +15,14 @@ class AverageNumberOfPostsPerUserPerMonthTest extends PostStatsTestCase
     /** @var AverageNumberOfPostsPerUserPerMonth */
     private $averageNumberOfPostsPerUserPerMonth;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->averageNumberOfPostsPerUserPerMonth = new AverageNumberOfPostsPerUserPerMonth($this->getPostsServiceMock());
     }
 
     /**
      * @test
+     * @throws \AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException
      */
     public function shouldCalculateAverageNumberOfPostsPerUserPerMonth(): void
     {

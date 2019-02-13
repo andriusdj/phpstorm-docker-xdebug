@@ -3,10 +3,7 @@ declare(strict_types=1);
 
 namespace Test\Unit\Service\PostStats;
 
-use AndriusJankevicius\Supermetrics\Service\PostsManager;
 use AndriusJankevicius\Supermetrics\Service\PostStats\LongestPostByCharacterLengthPerMonth;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Test\Unit\Service\PostsManagerTest;
 
 /**
@@ -19,13 +16,14 @@ class LongestPostByCharacterLengthPerMonthTest extends PostStatsTestCase
     /** @var LongestPostByCharacterLengthPerMonth */
     private $longestPostByCharacterLengthPerMonth;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->longestPostByCharacterLengthPerMonth = new LongestPostByCharacterLengthPerMonth($this->getPostsServiceMock());
     }
 
     /**
      * @test
+     * @throws \Exception
      */
     public function shouldReturnLongestPostsByCharacterLengthPerMonth(): void
     {

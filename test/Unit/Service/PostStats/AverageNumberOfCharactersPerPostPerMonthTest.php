@@ -16,13 +16,14 @@ class AverageNumberOfCharactersPerPostPerMonthTest extends PostStatsTestCase
     /** @var AverageNumberOfCharactersPerPostPerMonth */
     private $averageCharactersPerPostPerMonth;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->averageCharactersPerPostPerMonth = new AverageNumberOfCharactersPerPostPerMonth($this->getPostsServiceMock());
     }
 
     /**
      * @test
+     * @throws \AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException
      */
     public function shouldCalculateAverageNumberOfCharactersPerPostPerMonth(): void
     {

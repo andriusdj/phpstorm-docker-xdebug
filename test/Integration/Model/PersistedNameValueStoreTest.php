@@ -28,7 +28,7 @@ class PersistedNameValueStoreTest extends TestCase
         $this->assertFileExists(self::$testPath);
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         unlink(self::$testPath);
     }

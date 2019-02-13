@@ -18,7 +18,7 @@ class TokenStorageTest extends TestCase
     /** @var MockObject */
     private $model;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->model = $this->createMock(PersistedNameValueStore::class);
 

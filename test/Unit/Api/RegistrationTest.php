@@ -27,15 +27,16 @@ class RegistrationTest extends TestCase
      */
     private $client;
 
-    protected function setUp()
+    protected function setUp(): void
     {
-        $this->client = $this->createPartialMock(Client::class, ['post']);
+        $this->client = $this->createMock(Client::class);
 
         $this->registration = new Registration($this->client);
     }
 
     /**
      * @test
+     * @throws \AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException
      */
     public function shouldFetchNewToken(): void
     {

@@ -30,7 +30,7 @@ class PostsManagerTest extends TestCase
     /** @var MockObject */
     private $postsStorage;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->postsApi = $this->createMock(PostsApi::class);
         $this->tokenManager = $this->createMock(TokenManager::class);
@@ -41,6 +41,7 @@ class PostsManagerTest extends TestCase
 
     /**
      * @test
+     * @throws \Exception
      */
     public function shouldReceivePostsFromPersistedStorage(): void
     {
@@ -63,6 +64,7 @@ class PostsManagerTest extends TestCase
 
     /**
      * @test
+     * @throws \Exception
      */
     public function shouldReceivePostsFromApiOnce(): void
     {
@@ -96,6 +98,7 @@ class PostsManagerTest extends TestCase
 
     /**
      * @test
+     * @throws InvalidApiResponseException
      */
     public function shouldReceiveNoPostsWhenUnavailable(): void
     {

@@ -20,7 +20,7 @@ class ApiTest extends TestCase
     /** @var Client */
     private $client;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->client = new Client();
     }

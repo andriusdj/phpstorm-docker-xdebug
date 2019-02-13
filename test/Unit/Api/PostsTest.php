@@ -7,7 +7,6 @@ use AndriusJankevicius\Supermetrics\Api\Posts;
 use AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
-use function GuzzleHttp\Psr7\stream_for;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
@@ -19,14 +18,15 @@ class PostsTest extends TestCase
     /** @var Posts */
     private $posts;
 
-    protected function setUp()
+    protected function setUp(): void
     {
-        $this->client = $this->createPartialMock(Client::class, ['get']);
+        $this->client = $this->createMock(Client::class);
         $this->posts = new Posts($this->client);
     }
 
     /**
      * @test
+     * @throws InvalidApiResponseException
      */
     public function shouldRetrievePosts(): void
     {
