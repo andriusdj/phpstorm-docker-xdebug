@@ -10,6 +10,7 @@ namespace Test\Integration\Model;
 
 
 use AndriusJankevicius\Supermetrics\Model\PersistedNameValueStore;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class PersistedNameValueStoreTest extends TestCase
@@ -18,11 +19,13 @@ class PersistedNameValueStoreTest extends TestCase
 
     /**
      * @test
-     * @expectedException \InvalidArgumentException
      */
     public function shouldCreateStore(): void
     {
         $store = new PersistedNameValueStore(self::$testPath);
+
+        $this->expectException(InvalidArgumentException::class);
+
         $store->find('test');
 
         $this->assertFileExists(self::$testPath);

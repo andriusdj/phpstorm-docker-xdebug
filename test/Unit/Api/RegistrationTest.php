@@ -10,9 +10,9 @@ namespace Test\Unit\Api;
 
 
 use AndriusJankevicius\Supermetrics\Api\Registration;
+use AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
-use function GuzzleHttp\Psr7\stream_for;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
@@ -23,20 +23,20 @@ class RegistrationTest extends TestCase
      */
     private $registration;
     /**
-     * @var MockObject
+     * @var MockObject|Client
      */
     private $client;
 
     protected function setUp(): void
     {
-        $this->client = $this->createMock(Client::class);
+        $this->client = $this->createPartialMock(Client::class, ['post']);
 
         $this->registration = new Registration($this->client);
     }
 
     /**
      * @test
-     * @throws \AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException
+     * @throws InvalidApiResponseException
      */
     public function shouldFetchNewToken(): void
     {
@@ -61,7 +61,7 @@ class RegistrationTest extends TestCase
 
     /**
      * @test
-     * @expectedException \AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException
+     * @throws InvalidApiResponseException
      */
     public function shouldThrowExceptionsWhenInvalidDataReceived(): void
     {
@@ -69,11 +69,13 @@ class RegistrationTest extends TestCase
             ->willReturn(new Response(
                 200,
                 ['content-type' => 'application/json'],
-                stream_for(json_encode([
+                json_encode([
                     'posts' => [],
                     'page' => 6,
-                ]))
+                ])
             ));
+
+        $this->expectException(InvalidApiResponseException::class);
 
         $this->registration->getToken();
     }

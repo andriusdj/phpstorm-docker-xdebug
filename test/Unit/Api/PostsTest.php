@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 class PostsTest extends TestCase
 {
-    /** @var MockObject */
+    /** @var MockObject|Client */
     private $client;
 
     /** @var Posts */
@@ -20,7 +20,7 @@ class PostsTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->client = $this->createMock(Client::class);
+        $this->client = $this->createPartialMock(Client::class, ['get']);
         $this->posts = new Posts($this->client);
     }
 
@@ -47,7 +47,7 @@ class PostsTest extends TestCase
 
     /**
      * @test
-     * @expectedException \AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException
+     * @throws InvalidApiResponseException
      */
     public function shouldThrowExceptionsWhenInvalidDataReceived(): void
     {
@@ -60,6 +60,8 @@ class PostsTest extends TestCase
                     'page' => 6,
                 ]])
             ));
+
+        $this->expectException(InvalidApiResponseException::class);
 
         $this->posts->getPosts('test', 2);
     }
