@@ -3,9 +3,7 @@ declare(strict_types=1);
 
 namespace AndriusJankevicius\Supermetrics;
 
-use AndriusJankevicius\Supermetrics\Service\PostStats\PostStatsInterface;
 use AndriusJankevicius\Supermetrics\Service\PostStatsContainer;
-use DI\Container;
 
 /**
  * Class AssignmentResult

@@ -54,7 +54,7 @@ class TotalPostsSplitByWeek implements PostStatsInterface
 
     /**
      * @param Post[] $posts
-     * @param Post[] $totalPostsByWeek
+     * @param int[]  $totalPostsByWeek
      *
      * @return array
      */

@@ -2,32 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="503f4a94-8415-42ea-bc2a-15e948aeef11" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Service/PostStats/AverageNumberOfCharactersPerPostPerMonth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/PostStats/AverageNumberOfPostsPerUserPerMonth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Unit/Service/PostStats/AverageNumberOfCharactersPerPostPerMonthTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Unit/Service/PostStats/AverageNumberOfPostsPerUserPerMonthTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Unit/Service/PostStats/LongestPostByCharacterLengthPerMonthTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Unit/Service/PostStats/PostStatsTestCase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpstorm-docker-xdebug.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpstorm-docker-xdebug.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Api/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Api/Posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Api/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Api/Registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AssignmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AssignmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AssignmentKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AssignmentKernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/PersistedNameValueStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PersistedNameValueStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/PostStats/LongestPostByCharacterLengthPerMonth.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PostStats/LongestPostByCharacterLengthPerMonth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/PostStats/PostStatsInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PostStats/PostStatsInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/PostStats/TotalPostsSplitByWeek.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PostStats/TotalPostsSplitByWeek.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/PostStatsContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PostStatsContainer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Integration/Api/ApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Integration/Api/ApiTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Unit/Api/PostsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Unit/Api/PostsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Unit/Api/RegistrationTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Unit/Api/RegistrationTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Unit/Service/PostStats/TotalPostsSplitByWeekTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Unit/Service/PostStats/TotalPostsSplitByWeekTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Unit/Service/PostsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Unit/Service/PostsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Unit/Service/PostStats/LongestPostByCharacterLengthPerMonthTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Unit/Service/PostStats/LongestPostByCharacterLengthPerMonthTest.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/" />
     <ignored path="$PROJECT_DIR$/vendor/guzzlehttp/promises/" />
@@ -104,10 +85,60 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AssignmentKernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+            <state relative-caret-position="283">
+              <caret line="31" column="51" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="51" />
               <folding>
-                <element signature="e#76#166#0#PHP" expanded="true" />
+                <element signature="e#76#171#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/phpunit.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/Unit/Service/PostStats/LongestPostByCharacterLengthPerMonthTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="519">
+              <caret line="31" column="56" lean-forward="true" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+              <folding>
+                <element signature="e#72#122#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="551">
+                <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Service/TokenStorage.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Service/PostStats/TotalPostsSplitByWeek.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="502">
+              <caret line="62" column="35" lean-forward="true" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+              <folding>
+                <element signature="e#94#142#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,26 +161,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AssignmentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-              <folding>
-                <element signature="e#76#149#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/Unit/Service/PostStats/AverageNumberOfCharactersPerPostPerMonthTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-              <folding>
-                <element signature="e#455#494#0#PHP" expanded="true" />
-                <element signature="e#445#473#1#PHP" expanded="true" />
-                <element signature="e#751#790#0#PHP" expanded="true" />
-                <element signature="e#765#804#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="133">
+              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -180,7 +193,6 @@
         <option value="$PROJECT_DIR$/src/Service/PostStats.php" />
         <option value="$PROJECT_DIR$/src/Api/Registration.php" />
         <option value="$PROJECT_DIR$/test/Integration/Api/ApiTest.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Post.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/Api/Posts.php" />
         <option value="$PROJECT_DIR$/test/Unit/Api/RegistrationTest.php" />
@@ -190,17 +202,20 @@
         <option value="$PROJECT_DIR$/src/Model/PersistedNameValueStore.php" />
         <option value="$PROJECT_DIR$/src/Service/PostStats/PostStatsInterface.php" />
         <option value="$PROJECT_DIR$/src/Service/PostStats/LongestPostByCharacterLengthPerMonth.php" />
-        <option value="$PROJECT_DIR$/src/Service/PostStats/TotalPostsSplitByWeek.php" />
-        <option value="$PROJECT_DIR$/test/Unit/Service/PostStats/LongestPostByCharacterLengthPerMonthTest.php" />
         <option value="$PROJECT_DIR$/test/Unit/Service/PostStats/TotalPostsSplitByWeekTest.php" />
         <option value="$PROJECT_DIR$/src/Service/PostStats/AverageNumberOfPostsPerUserPerMonth.php" />
         <option value="$PROJECT_DIR$/test/Unit/Service/PostStats/AverageNumberOfPostsPerUserPerMonthTest.php" />
-        <option value="$PROJECT_DIR$/src/AssignmentController.php" />
-        <option value="$PROJECT_DIR$/src/AssignmentKernel.php" />
         <option value="$PROJECT_DIR$/src/Service/PostStats/AverageNumberOfCharactersPerPostPerMonth.php" />
         <option value="$PROJECT_DIR$/test/Unit/Service/PostStats/AverageNumberOfCharactersPerPostPerMonthTest.php" />
         <option value="$PROJECT_DIR$/src/Service/PostStatsContainer.php" />
         <option value="$PROJECT_DIR$/test/Unit/Api/PostsTest.php" />
+        <option value="$PROJECT_DIR$/src/AssignmentKernel.php" />
+        <option value="$PROJECT_DIR$/phpunit.xml" />
+        <option value="$PROJECT_DIR$/test/Unit/Service/PostStats/LongestPostByCharacterLengthPerMonthTest.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Post.php" />
+        <option value="$PROJECT_DIR$/src/Service/PostStats/TotalPostsSplitByWeek.php" />
+        <option value="$PROJECT_DIR$/src/AssignmentController.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -301,43 +316,6 @@
             <path>
               <item name="phpstorm-docker-xdebug-supermetrics-task" type="b2602c69:ProjectViewProjectNode" />
               <item name="phpstorm-docker-xdebug-supermetrics-task" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Exception" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Service" type="462c0819:PsiDirectoryNode" />
-              <item name="PostStats" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -345,28 +323,6 @@
               <item name="phpstorm-docker-xdebug-supermetrics-task" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="Unit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="Unit" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="Unit" type="462c0819:PsiDirectoryNode" />
-              <item name="Service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phpstorm-docker-xdebug-supermetrics-task" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="Unit" type="462c0819:PsiDirectoryNode" />
-              <item name="Service" type="462c0819:PsiDirectoryNode" />
-              <item name="PostStats" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -431,18 +387,18 @@
       <option name="presentableId" value="Default" />
       <updated>1549980205245</updated>
       <workItem from="1549980206580" duration="24424000" />
-      <workItem from="1550068087167" duration="2201000" />
+      <workItem from="1550068087167" duration="6442000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26625000" />
+    <option name="totallyTimeSpent" value="30866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19711539" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19711539" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -452,7 +408,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" weight="0.4758772" />
+      <window_info anchor="bottom" id="Docker" order="7" weight="0.26973686" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.08991228" />
@@ -492,22 +448,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Token.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
-          <folding>
-            <element signature="e#370#381#0#PHP" expanded="true" />
-            <element signature="e#407#423#0#PHP" expanded="true" />
-            <element signature="e#469#480#0#PHP" expanded="true" />
-            <element signature="e#506#515#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpunit.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
@@ -638,26 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Unit/Service/PostStats/LongestPostByCharacterLengthPerMonthTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="39" column="71" lean-forward="true" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="71" />
-          <folding>
-            <element signature="e#72#122#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/PostStats/TotalPostsSplitByWeek.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="66" column="13" lean-forward="true" selection-start-line="64" selection-start-column="12" selection-end-line="66" selection-end-column="13" />
-          <folding>
-            <element signature="e#94#142#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/Unit/Service/PostStats/TotalPostsSplitByWeekTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="671">
@@ -679,16 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="19" column="75" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AssignmentKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-          <folding>
-            <element signature="e#76#166#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -721,12 +631,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AssignmentController.php">
+    <entry file="file://$PROJECT_DIR$/test/Unit/Service/PostStats/AverageNumberOfCharactersPerPostPerMonthTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        <state relative-caret-position="475">
+          <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
           <folding>
-            <element signature="e#76#149#0#PHP" expanded="true" />
+            <element signature="e#455#494#0#PHP" expanded="true" />
+            <element signature="e#445#473#1#PHP" expanded="true" />
+            <element signature="e#751#790#0#PHP" expanded="true" />
+            <element signature="e#765#804#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Unit/Service/PostStats/LongestPostByCharacterLengthPerMonthTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="31" column="56" lean-forward="true" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+          <folding>
+            <element signature="e#72#122#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -738,16 +661,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Unit/Service/PostStats/AverageNumberOfCharactersPerPostPerMonthTest.php">
+    <entry file="file://$PROJECT_DIR$/src/Service/PostStats/TotalPostsSplitByWeek.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="62" column="35" lean-forward="true" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+          <folding>
+            <element signature="e#94#142#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/TokenStorage.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpunit.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
-          <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AssignmentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AssignmentKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="31" column="51" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="51" />
           <folding>
-            <element signature="e#455#494#0#PHP" expanded="true" />
-            <element signature="e#445#473#1#PHP" expanded="true" />
-            <element signature="e#751#790#0#PHP" expanded="true" />
-            <element signature="e#765#804#0#PHP" expanded="true" />
+            <element signature="e#76#171#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="551">
+            <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

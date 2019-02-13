@@ -33,8 +33,8 @@ class LongestPostByCharacterLengthPerMonthTest extends PostStatsTestCase
         $testPostsPage4 = PostsTest::postsTestSample(4);
 
         $expected = [
-            'January, 2019' => $testPostsPage1[1],
-            'March, 2019' => $testPostsPage4[7],
+            'January, 2019' => $testPostsPage1['post5c63cd7eb65fd_6f41ee3f'],
+            'March, 2019' => $testPostsPage4['post5c63cd7eb6612_d6d81505'],
         ];
 
         $longestPosts = $this->longestPostByCharacterLengthPerMonth->get(4);
