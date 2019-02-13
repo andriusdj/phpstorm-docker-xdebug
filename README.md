@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/andriusdj/phpstorm-docker-xdebug-supermetrics-task.svg?branch=master)](https://travis-ci.org/andriusdj/phpstorm-docker-xdebug-supermetrics-task)
+
 # Coding task
 For Supermetrics
 
