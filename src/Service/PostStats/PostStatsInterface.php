@@ -12,9 +12,12 @@ interface PostStatsInterface
 {
     /**
      * Return the stats information
+     *
+     * @param int $pages
+     *
      * @return array
      */
-    public function get(): array;
+    public function get(int $pages): array;
 
     /**
      * The name of the stats entry

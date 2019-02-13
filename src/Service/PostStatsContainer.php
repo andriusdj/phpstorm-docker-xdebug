@@ -3,9 +3,7 @@ declare(strict_types=1);
 
 namespace AndriusJankevicius\Supermetrics\Service;
 
-use AndriusJankevicius\Supermetrics\Entity\Post;
 use AndriusJankevicius\Supermetrics\Service\PostStats\PostStatsInterface;
-use DI\Container;
 
 /**
  * Class PostStats
@@ -20,18 +18,11 @@ class PostStatsContainer
     private $postStats = [];
 
     /**
-     * PostStats constructor.
-     *
-     * @param Container $container
+     * @param PostStatsInterface $postStats
      */
-    public function __construct(Container $container)
+    public function add(PostStatsInterface $postStats): void
     {
-        $containerContents = $container->getKnownEntryNames();
-        foreach ($containerContents as $entry) {
-            if ($entry instanceof PostStatsInterface) {
-                $this->postStats[] = $entry;
-            }
-        }
+        $this->postStats[$postStats->getName()] = $postStats;
     }
 
     /**
@@ -39,6 +30,11 @@ class PostStatsContainer
      */
     public function getAll(): array
     {
+        if (!$this->postStats) {
+
+            throw new \RuntimeException('No PostStats classes have been loaded!');
+        }
+
         return $this->postStats;
     }
 }

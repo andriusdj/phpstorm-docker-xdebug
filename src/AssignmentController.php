@@ -3,8 +3,9 @@ declare(strict_types=1);
 
 namespace AndriusJankevicius\Supermetrics;
 
+use AndriusJankevicius\Supermetrics\Service\PostStats\PostStatsInterface;
 use AndriusJankevicius\Supermetrics\Service\PostStatsContainer;
-use AndriusJankevicius\Supermetrics\Service\TokenManager;
+use DI\Container;
 
 /**
  * Class AssignmentResult
@@ -32,10 +33,12 @@ class AssignmentController
      */
     public function getResult(): array
     {
+        $maxPages = isset($_GET['max-pages']) ? (int) $_GET['max-pages'] : 10;
+
         $stats = [];
         try {
             foreach ($this->postStatsContainer->getAll() as $postStats) {
-                $stats[$postStats->getName()] = $postStats->get();
+                $stats[$postStats->getName()] = $postStats->get($maxPages);
             }
 
             return $stats;

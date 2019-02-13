@@ -32,7 +32,7 @@ class Registration
 {
     private $clientId = 'ju16a6m81mhid5ue1z3v2g0uh';
     private $email = 'your@email.address';
-    private $name = 'Your Name';
+    private $name = 'YourName';
     private $registrationUrl = 'https://api.supermetrics.com/assignment/register';
     /**
      * @var Client
@@ -75,7 +75,8 @@ class Registration
 
         $content = $response->getBody()->getContents();
         $registration = json_decode($content, true);
-        $token = $registration['sl_token'] ?? '';
+
+        $token = $registration['data']['sl_token'] ?? '';
 
         if (empty($token)) {
 

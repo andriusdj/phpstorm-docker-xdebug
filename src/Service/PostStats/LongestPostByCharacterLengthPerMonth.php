@@ -30,17 +30,23 @@ class LongestPostByCharacterLengthPerMonth implements PostStatsInterface
     }
 
     /**
+     * @param int $pages
+     *
      * @return array
      * @throws InvalidApiResponseException
      */
-    public function get(): array
+    public function get(int $pages): array
     {
         $longestPostsPerMonth = [];
 
-        $page = 1;
-        while ($posts = $this->posts->getPosts($page)) {
-            $longestPostsPerMonth = $this->getLongestPostPerMonthPerPage($posts, $longestPostsPerMonth);
-            $page++;
+        $currentPage = 1;
+        while ($posts = $this->posts->getPosts($currentPage)) {
+            $longestPostsPerMonth = $this->getLongestPostPerMonth($posts, $longestPostsPerMonth);
+            $currentPage++;
+
+            if ($currentPage > $pages) {
+                break;
+            }
         }
 
         return $longestPostsPerMonth;
@@ -52,16 +58,17 @@ class LongestPostByCharacterLengthPerMonth implements PostStatsInterface
      *
      * @return array
      */
-    private function getLongestPostPerMonthPerPage(array $posts, array $longestPostPerMonth): array
+    private function getLongestPostPerMonth(array $posts, array $longestPostPerMonth): array
     {
         foreach ($posts as $post) {
-            $month = $post->createdAt->format('Ym');
+            $month = $post->createdAt->format('F, Y');
             $postLength = \strlen($post->post);
 
-            if (isset($longestPostPerMonth[$month]) && $postLength > \strlen($longestPostPerMonth[$month]->post)) {
+            if (!isset($longestPostPerMonth[$month]) ||
+                (isset($longestPostPerMonth[$month]) && $postLength > \strlen($longestPostPerMonth[$month]->post))
+            ) {
                 $longestPostPerMonth[$month] = $post;
             }
-
         }
 
         return $longestPostPerMonth;

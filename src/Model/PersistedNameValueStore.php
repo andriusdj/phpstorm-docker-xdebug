@@ -41,7 +41,7 @@ class PersistedNameValueStore
             throw new \InvalidArgumentException('The requested ' . $name .' was not found in the data file');
         }
 
-        return unserialize($this->data[$name]);
+        return unserialize($this->data[$name], [false]);
     }
 
     /**

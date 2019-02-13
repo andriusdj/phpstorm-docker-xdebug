@@ -44,11 +44,11 @@ class RegistrationTest extends TestCase
                 new Response(
                     200,
                     ['Content-Type' => 'application/json'],
-                    json_encode([
+                    json_encode(['data' => [
                         'sl_token' => 'test',
                         'email' => 'your@email.address',
                         'client_id' => 'ju16a6m81mhid5ue1z3v2g0uh'
-                    ])
+                    ]])
                 )
             );
 

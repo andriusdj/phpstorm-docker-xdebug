@@ -69,14 +69,16 @@ class Posts
             throw new InvalidApiResponseException($e->getMessage());
         }
         $content = $response->getBody()->getContents();
-        $posts = json_decode($content, true);
+        $contentDecoded = json_decode($content, true);
 
-        if ($posts['page'] !== $page) {
+        $data = $contentDecoded['data'];
+
+        if ($data['page'] !== $page) {
 
             throw new InvalidApiResponseException('Wrong posts page returned');
         }
 
-        return $posts['posts'];
+        return $data['posts'];
     }
 
 }

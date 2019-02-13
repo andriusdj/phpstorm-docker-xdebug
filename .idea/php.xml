@@ -67,6 +67,7 @@
       <interpreter home="docker://vilnius-talk_php:latest/php" id="dc72be71-e7ed-486f-aa5a-1b25d7d4c7a1" name="vilnius-talk_php:latest" debugger_id="php.debugger.XDebug">
         <remote_data DOCKER_ACCOUNT_NAME="Docker" DOCKER_IMAGE_NAME="vilnius-talk_php:latest" DOCKER_REMOTE_PROJECT_PATH="/opt/project" INTERPRETER_PATH="php" HELPERS_PATH="/opt/.phpstorm_helpers" INITIALIZED="false" VALID="true" />
       </interpreter>
+      <interpreter home="$USER_HOME$/.PhpStorm2018.3/system/plugins/idea-php-latest-plugin/php-v7.3.1/php.sh" id="849e667c-df7d-4f7e-a600-4fe1ce51ef0f" name="PHP latest" debugger_id="php.debugger.XDebug" />
     </interpreters>
   </component>
   <component name="PhpInterpretersPhpInfoCache">

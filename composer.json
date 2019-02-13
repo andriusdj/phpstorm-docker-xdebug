@@ -22,6 +22,12 @@
       "AndriusJankevicius\\Supermetrics\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "AndriusJankevicius\\Supermetrics\\": "src/",
+      "Test\\": "test/"
+    }
+  },
   "require": {
     "ext-json": "*",
     "ext-pdo": "*",

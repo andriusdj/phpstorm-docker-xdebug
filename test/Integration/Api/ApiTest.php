@@ -32,8 +32,6 @@ class ApiTest extends TestCase
      */
     public function shouldReceiveNewToken(): string
     {
-        $this->markTestSkipped('400 error in api: INVALID_STRING_CHARS');
-
         $registration = new Registration($this->client);
 
         $token = $registration->getToken();
