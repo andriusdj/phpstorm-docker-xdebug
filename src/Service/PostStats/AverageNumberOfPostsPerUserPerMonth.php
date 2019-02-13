@@ -10,23 +10,23 @@ namespace AndriusJankevicius\Supermetrics\Service\PostStats;
 
 
 use AndriusJankevicius\Supermetrics\Entity\Post;
-use AndriusJankevicius\Supermetrics\Service\Posts;
+use AndriusJankevicius\Supermetrics\Service\PostsManager;
 
 class AverageNumberOfPostsPerUserPerMonth implements PostStatsInterface
 {
     /**
-     * @var Posts
+     * @var PostsManager
      */
-    private $posts;
+    private $postsManager;
 
     /**
      * AverageNumberOfPostsPerUserPerMonth constructor.
      *
-     * @param Posts $posts
+     * @param PostsManager $posts
      */
-    public function __construct(Posts $posts)
+    public function __construct(PostsManager $posts)
     {
-        $this->posts = $posts;
+        $this->postsManager = $posts;
     }
 
     /**
@@ -42,7 +42,7 @@ class AverageNumberOfPostsPerUserPerMonth implements PostStatsInterface
         $totals = [];
 
         $currentPage = 1;
-        while ($posts = $this->posts->getPosts($currentPage)) {
+        while ($posts = $this->postsManager->getPosts($currentPage)) {
             $totals = $this->getTotalNumberOfPostsPerUserPerMonth($posts, $totals);
             $currentPage++;
 

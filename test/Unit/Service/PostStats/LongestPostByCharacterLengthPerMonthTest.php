@@ -3,11 +3,11 @@ declare(strict_types=1);
 
 namespace Test\Unit\Service\PostStats;
 
-use AndriusJankevicius\Supermetrics\Service\Posts;
+use AndriusJankevicius\Supermetrics\Service\PostsManager;
 use AndriusJankevicius\Supermetrics\Service\PostStats\LongestPostByCharacterLengthPerMonth;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Test\Unit\Service\PostsTest;
+use Test\Unit\Service\PostsManagerTest;
 
 /**
  * Class LongestPostByCharacterLengthPerMonthTest
@@ -29,8 +29,8 @@ class LongestPostByCharacterLengthPerMonthTest extends PostStatsTestCase
      */
     public function shouldReturnLongestPostsByCharacterLengthPerMonth(): void
     {
-        $testPostsPage1 = PostsTest::postsTestSample(1);
-        $testPostsPage4 = PostsTest::postsTestSample(4);
+        $testPostsPage1 = PostsManagerTest::postsTestSample(1);
+        $testPostsPage4 = PostsManagerTest::postsTestSample(4);
 
         $expected = [
             'January, 2019' => $testPostsPage1['post5c63cd7eb65fd_6f41ee3f'],

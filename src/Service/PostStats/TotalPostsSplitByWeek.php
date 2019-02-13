@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace AndriusJankevicius\Supermetrics\Service\PostStats;
 
 use AndriusJankevicius\Supermetrics\Entity\Post;
-use AndriusJankevicius\Supermetrics\Service\Posts;
+use AndriusJankevicius\Supermetrics\Service\PostsManager;
 
 /**
  * Class TotalPostsSplitByWeek
@@ -14,18 +14,18 @@ use AndriusJankevicius\Supermetrics\Service\Posts;
 class TotalPostsSplitByWeek implements PostStatsInterface
 {
     /**
-     * @var Posts
+     * @var PostsManager
      */
-    private $posts;
+    private $postsManager;
 
     /**
      * TotalPostsSplitByWeek constructor.
      *
-     * @param Posts $posts
+     * @param PostsManager $posts
      */
-    public function __construct(Posts $posts)
+    public function __construct(PostsManager $posts)
     {
-        $this->posts = $posts;
+        $this->postsManager = $posts;
     }
 
     /**
@@ -40,7 +40,7 @@ class TotalPostsSplitByWeek implements PostStatsInterface
 
         $totalPostsByWeek = [];
 
-        while ($posts = $this->posts->getPosts($currentPage)) {
+        while ($posts = $this->postsManager->getPosts($currentPage)) {
             $totalPostsByWeek = $this->getTotalPostsByWeek($posts, $totalPostsByWeek);
             $currentPage++;
 

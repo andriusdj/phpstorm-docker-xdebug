@@ -6,13 +6,12 @@ namespace AndriusJankevicius\Supermetrics\Service;
 use AndriusJankevicius\Supermetrics\Api\Posts as PostsApi;
 use AndriusJankevicius\Supermetrics\Entity\Post;
 use AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException;
-use AndriusJankevicius\Supermetrics\Model\PersistedNameValueStore;
 
 /**
  * Class Posts
  * @package AndriusJankevicius\Supermetrics\Service
  */
-class Posts
+class PostsManager
 {
     /**
      * @var PostsApi
@@ -23,26 +22,27 @@ class Posts
      */
     private $tokenManager;
     /**
+     * @var PostsStorage
+     */
+    private $postsStorage;
+
+    /**
      * @var array
      */
     private $posts;
-    /**
-     * @var PersistedNameValueStore
-     */
-    private $valueStore;
 
     /**
      * Posts constructor.
      *
-     * @param PostsApi                $postsApi
-     * @param TokenManager            $tokenManager
-     * @param PersistedNameValueStore $valueStore
+     * @param PostsApi $postsApi
+     * @param TokenManager $tokenManager
+     * @param PostsStorage $postsStorage
      */
-    public function __construct(PostsApi $postsApi, TokenManager $tokenManager, PersistedNameValueStore $valueStore)
+    public function __construct(PostsApi $postsApi, TokenManager $tokenManager, PostsStorage $postsStorage)
     {
         $this->postsApi = $postsApi;
         $this->tokenManager = $tokenManager;
-        $this->valueStore = $valueStore;
+        $this->postsStorage = $postsStorage;
     }
 
     /**
@@ -53,7 +53,7 @@ class Posts
     public function getPosts(int $page): array
     {
         if (empty($this->posts[$page])) {
-            $posts = $this->findPersistedPosts($page);
+            $posts = $this->postsStorage->findPersistedPosts($page);
             if (!$posts) {
                 $posts = $this->getPostsFromApi($page);
             }
@@ -63,7 +63,7 @@ class Posts
                 return [];
             }
 
-            $this->save($page, $posts);
+            $this->postsStorage->save($page, $posts);
             $this->posts[$page] = $this->getPostEntitiesFromApiPosts($posts);
         }
 
@@ -92,42 +92,6 @@ class Posts
         return $posts;
     }
 
-    /**
-     * @param int $page
-     *
-     * @return array
-     */
-    private function findPersistedPosts(int $page): array
-    {
-        try {
-            $posts = $this->valueStore->find($this->getStoreKey($page));
-        } catch (\InvalidArgumentException $e) {
-
-            return [];
-        }
-
-        return $posts;
-    }
-
-    /**
-     * @param int   $page
-     * @param array $posts
-     */
-    private function save(int $page, array $posts): void
-    {
-        $this->valueStore->persist($this->getStoreKey($page), $posts);
-        $this->valueStore->flush();
-    }
-
-    /**
-     * @param int $page
-     *
-     * @return string
-     */
-    private function getStoreKey(int $page): string
-    {
-        return 'posts-' . $page;
-    }
 
     /**
      * @param array $posts

@@ -5,7 +5,7 @@ namespace AndriusJankevicius\Supermetrics\Service\PostStats;
 
 use AndriusJankevicius\Supermetrics\Entity\Post;
 use AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException;
-use AndriusJankevicius\Supermetrics\Service\Posts;
+use AndriusJankevicius\Supermetrics\Service\PostsManager;
 
 /**
  * Class LongestPostByCharacterLengthPerMonth
@@ -15,18 +15,18 @@ use AndriusJankevicius\Supermetrics\Service\Posts;
 class LongestPostByCharacterLengthPerMonth implements PostStatsInterface
 {
     /**
-     * @var Posts
+     * @var PostsManager
      */
-    private $posts;
+    private $postsManager;
 
     /**
      * LongestPostByCharacterLengthPerMonth constructor.
      *
-     * @param Posts $posts
+     * @param PostsManager $posts
      */
-    public function __construct(Posts $posts)
+    public function __construct(PostsManager $posts)
     {
-        $this->posts = $posts;
+        $this->postsManager = $posts;
     }
 
     /**
@@ -40,7 +40,7 @@ class LongestPostByCharacterLengthPerMonth implements PostStatsInterface
         $longestPostsPerMonth = [];
 
         $currentPage = 1;
-        while ($posts = $this->posts->getPosts($currentPage)) {
+        while ($posts = $this->postsManager->getPosts($currentPage)) {
             $longestPostsPerMonth = $this->getLongestPostPerMonth($posts, $longestPostsPerMonth);
             $currentPage++;
 

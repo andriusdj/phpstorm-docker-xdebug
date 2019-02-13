@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace AndriusJankevicius\Supermetrics\Service\PostStats;
 
 use AndriusJankevicius\Supermetrics\Entity\Post;
-use AndriusJankevicius\Supermetrics\Service\Posts;
+use AndriusJankevicius\Supermetrics\Service\PostsManager;
 
 /**
  * Class AverageNumberOfCharactersPerPostPerMonth
@@ -14,13 +14,13 @@ use AndriusJankevicius\Supermetrics\Service\Posts;
 class AverageNumberOfCharactersPerPostPerMonth implements PostStatsInterface
 {
     /**
-     * @var Posts
+     * @var PostsManager
      */
-    private $posts;
+    private $postsManager;
 
-    public function __construct(Posts $posts)
+    public function __construct(PostsManager $posts)
     {
-        $this->posts = $posts;
+        $this->postsManager = $posts;
     }
 
     /**
@@ -36,7 +36,7 @@ class AverageNumberOfCharactersPerPostPerMonth implements PostStatsInterface
         $totals = [];
 
         $currentPage = 1;
-        while ($posts = $this->posts->getPosts($currentPage)) {
+        while ($posts = $this->postsManager->getPosts($currentPage)) {
             $totals = $this->getTotalNumberOfCharactersPerPostPerMonth($posts, $totals);
             $currentPage++;
 

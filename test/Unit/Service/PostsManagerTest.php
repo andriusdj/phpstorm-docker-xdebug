@@ -6,8 +6,8 @@ namespace Test\Unit\Service;
 use AndriusJankevicius\Supermetrics\Api\Posts as PostsApi;
 use AndriusJankevicius\Supermetrics\Entity\Post;
 use AndriusJankevicius\Supermetrics\Exception\InvalidApiResponseException;
-use AndriusJankevicius\Supermetrics\Model\PersistedNameValueStore;
-use AndriusJankevicius\Supermetrics\Service\Posts;
+use AndriusJankevicius\Supermetrics\Service\PostsManager;
+use AndriusJankevicius\Supermetrics\Service\PostsStorage;
 use AndriusJankevicius\Supermetrics\Service\TokenManager;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -18,9 +18,9 @@ use Test\Unit\Api\PostsTest as PostsApiTest;
  *
  * @package Test\Unit\Service
  */
-class PostsTest extends TestCase
+class PostsManagerTest extends TestCase
 {
-    /** @var Posts */
+    /** @var PostsManager */
     private $posts;
 
     /** @var MockObject */
@@ -28,15 +28,15 @@ class PostsTest extends TestCase
     /** @var MockObject */
     private $tokenManager;
     /** @var MockObject */
-    private $persistedStorage;
+    private $postsStorage;
 
     protected function setUp()
     {
         $this->postsApi = $this->createMock(PostsApi::class);
         $this->tokenManager = $this->createMock(TokenManager::class);
-        $this->persistedStorage = $this->createMock(PersistedNameValueStore::class);
+        $this->postsStorage = $this->createMock(PostsStorage::class);
 
-        $this->posts = new Posts($this->postsApi, $this->tokenManager, $this->persistedStorage);
+        $this->posts = new PostsManager($this->postsApi, $this->tokenManager, $this->postsStorage);
     }
 
     /**
@@ -46,12 +46,12 @@ class PostsTest extends TestCase
     {
         $expected = self::postsTestSample(3);
 
-        $this->persistedStorage->method('find')
+        $this->postsStorage->method('findPersistedPosts')
             ->willReturn(PostsApiTest::postsFromApiTestSample(3));
 
-        $this->persistedStorage->expects($this->once())
-            ->method('find')
-            ->with('posts-3');
+        $this->postsStorage->expects($this->once())
+            ->method('findPersistedPosts')
+            ->with(3);
 
         $this->postsApi->expects($this->never())
             ->method('getPosts');
@@ -69,8 +69,8 @@ class PostsTest extends TestCase
         $expected = self::postsTestSample(3);
         $apiTestSample = PostsApiTest::postsFromApiTestSample(3);
 
-        $this->persistedStorage->method('find')
-            ->willThrowException(new \InvalidArgumentException());
+        $this->postsStorage->method('findPersistedPosts')
+            ->willReturn([]);
 
         $this->tokenManager
             ->method('getToken')
@@ -83,12 +83,9 @@ class PostsTest extends TestCase
             ->method('getPosts')
             ->with('test_token', 3);
 
-        $this->persistedStorage->expects($this->once())
-            ->method('persist')
-            ->with('posts-3', $apiTestSample);
-
-        $this->persistedStorage->expects($this->once())
-            ->method('flush');
+        $this->postsStorage->expects($this->once())
+            ->method('save')
+            ->with(3, $apiTestSample);
 
         $result1 = $this->posts->getPosts(3);
         $result2 = $this->posts->getPosts(3);
@@ -104,8 +101,8 @@ class PostsTest extends TestCase
     {
         $expected = [];
 
-        $this->persistedStorage->method('find')
-            ->willThrowException(new \InvalidArgumentException());
+        $this->postsStorage->method('findPersistedPosts')
+            ->willReturn([]);
 
         $this->tokenManager
             ->method('getToken')
